@@ -1,0 +1,33 @@
+{
+  "name": "notificationBot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://harshvardhanvp:Hargovindji%401997@github.com/harshvardhanvp/notificationBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshvardhanvp/notificationBot/issues"
+  },
+  "homepage": "https://github.com/harshvardhanvp/notificationBot#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "crypto-js": "^4.0.0",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.9",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^2.6.1",
+    "node-telegram-bot-api": "^0.53.0",
+    "request": "^2.88.2",
+    "toad-scheduler": "^1.2.0"
+  }
+}

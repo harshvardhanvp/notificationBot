@@ -16,21 +16,22 @@ const slotResPin = async (bot, userId, pin) => {
         if(sessions.length>1)
         {
             
+            
             let mid = parseInt((sessions.length)/3);
             
             for(var i=0;i<mid;i++)
             {
-                firstHalf+="Vaccine - "+sessions[i].vaccine+"\nAge Limit - "+sessions[i].min_age_limit+"+"+"\nAvailable Capacity - "+sessions[i].available_capacity+"\nVaccination Fee - "+sessions[i].fee_type+"\nVaccination Centre - "+sessions[i].name+" \nCentre Address - "+sessions[i].address+`, ${sessions[i].district_name}, ${sessions[i].state_name}.`+"\nBlock - "+sessions[i].block_name+"\n\n";
+                firstHalf+="Vaccine - "+sessions[i].vaccine+"\nAge Limit - "+sessions[i].min_age_limit+"+"+"\nAvailable Capacity - "+sessions[i].available_capacity+"\nVaccination Fee - "+sessions[i].fee_type+"\nVaccination Centre - "+sessions[i].name+" \nCentre Address - "+sessions[i].address+`, ${sessions[i].district_name}, ${sessions[i].state_name}.`+"\nPincode - "+sessions[i].pincode+"\nBlock - "+sessions[i].block_name+"\n\n";
             }
 
             for(var i=mid;i<(mid*2);i++)
             {
-                secondHalf+="Vaccine - "+sessions[i].vaccine+"\nAge Limit - "+sessions[i].min_age_limit+"+"+"\nAvailable Capacity - "+sessions[i].available_capacity+"\nVaccination Fee - "+sessions[i].fee_type+"\nVaccination Centre - "+sessions[i].name+" \nCentre Address - "+sessions[i].address+`, ${sessions[i].district_name}, ${sessions[i].state_name}.`+"\nBlock - "+sessions[i].block_name+"\n\n";
+                secondHalf+="Vaccine - "+sessions[i].vaccine+"\nAge Limit - "+sessions[i].min_age_limit+"+"+"\nAvailable Capacity - "+sessions[i].available_capacity+"\nVaccination Fee - "+sessions[i].fee_type+"\nVaccination Centre - "+sessions[i].name+" \nCentre Address - "+sessions[i].address+`, ${sessions[i].district_name}, ${sessions[i].state_name}.`+"\nPincode - "+sessions[i].pincode+"\nBlock - "+sessions[i].block_name+"\n\n";
             }
 
             for(var i=(mid*2);i<sessions.length;i++)
             {
-                thirdHalf+="Vaccine - "+sessions[i].vaccine+"\nAge Limit - "+sessions[i].min_age_limit+"+"+"\nAvailable Capacity - "+sessions[i].available_capacity+"\nVaccination Fee - "+sessions[i].fee_type+"\nVaccination Centre - "+sessions[i].name+" \nCentre Address - "+sessions[i].address+`, ${sessions[i].district_name}, ${sessions[i].state_name}.`+"\nBlock - "+sessions[i].block_name+"\n\n";
+                thirdHalf+="Vaccine - "+sessions[i].vaccine+"\nAge Limit - "+sessions[i].min_age_limit+"+"+"\nAvailable Capacity - "+sessions[i].available_capacity+"\nVaccination Fee - "+sessions[i].fee_type+"\nVaccination Centre - "+sessions[i].name+" \nCentre Address - "+sessions[i].address+`, ${sessions[i].district_name}, ${sessions[i].state_name}.`+"\nPincode - "+sessions[i].pincode+"\nBlock - "+sessions[i].block_name+"\n\n";
             }
 
             firstHalf+=message;
@@ -43,9 +44,8 @@ const slotResPin = async (bot, userId, pin) => {
         }
         else
         {
-            Pinmessage="Vaccine - "+sessions[0].vaccine+"\nAge Limit - "+sessions[0].min_age_limit+"+"+"\nAvailable Capacity - "+sessions[0].available_capacity+"\nVaccination Fee - "+sessions[0].fee_type+"\nVaccination Centre - "+sessions[0].name+" \nCentre Address - "+sessions[0].address+`, ${sessions[0].district_name}, ${sessions[0].state_name}.`+"\nBlock - "+sessions[0].block_name+"\n\n";;
-            Pinmessage+=message;
-            bot.sendMessage(userId, Pinmessage);
+            message+="Vaccine - "+sessions[0].vaccine+"\nAge Limit - "+sessions[0].min_age_limit+"+"+"\nAvailable Capacity - "+sessions[0].available_capacity+"\nVaccination Fee - "+sessions[0].fee_type+"\nVaccination Centre - "+sessions[0].name+" \nCentre Address - "+sessions[0].address+`, ${sessions[0].district_name}, ${sessions[0].state_name}.`+"\nPincode - "+sessions[0].pincode+"\nBlock - "+sessions[0].block_name+"\n\n";;
+            bot.sendMessage(userId, message);
         }
         
     }

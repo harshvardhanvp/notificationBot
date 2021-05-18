@@ -99,4 +99,6 @@ bot.onText(/\/removeSchedule/, async (msg, match) => {
 cron.schedule('*/15 * * * * *', () => {
     scheduler(bot);
     console.log('Running a schedule every 15 seconds');
-  });
+});
+
+console.log('This should run now');

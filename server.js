@@ -96,7 +96,7 @@ bot.onText(/\/removeSchedule/, async (msg, match) => {
 })
 
 //Scheduling COWIN APIs with node-cron scheduler
-cron.schedule('*/1 * * * *', () => {
+cron.schedule('*/15 * * * * *', () => {
     scheduler(bot);
-    console.log('Running a schedule every one minute');
+    console.log('Running a schedule every 15 seconds');
   });

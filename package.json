@@ -29,5 +29,8 @@
     "node-telegram-bot-api": "^0.53.0",
     "request": "^2.88.2",
     "toad-scheduler": "^1.2.0"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }

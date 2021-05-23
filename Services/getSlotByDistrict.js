@@ -23,26 +23,33 @@ const slotResDistrict = async (bot, userId, districtId) => {
             
             for(var i=0;i<mid;i++)
             {
+                if(sessions[i].min_age_limit == 18 && sessions[i].available_capacity>0)
                 firstHalf+="Vaccine - "+sessions[i].vaccine+"\nAge Limit - "+sessions[i].min_age_limit+"+"+"\nAvailable Capacity - "+sessions[i].available_capacity+"\nVaccination Fee - "+sessions[i].fee_type+"\nVaccination Centre - "+sessions[i].name+" \nCentre Address - "+sessions[i].address+`, ${sessions[i].district_name}, ${sessions[i].state_name}.`+"\nPincode - "+sessions[i].pincode+"\nBlock - "+sessions[i].block_name+"\n\n";
             }
 
             for(var i=mid;i<(mid*2);i++)
             {
+                if(sessions[i].min_age_limit == 18 && sessions[i].available_capacity>0)
                 secondHalf+="Vaccine - "+sessions[i].vaccine+"\nAge Limit - "+sessions[i].min_age_limit+"+"+"\nAvailable Capacity - "+sessions[i].available_capacity+"\nVaccination Fee - "+sessions[i].fee_type+"\nVaccination Centre - "+sessions[i].name+" \nCentre Address - "+sessions[i].address+`, ${sessions[i].district_name}, ${sessions[i].state_name}.`+"\nPincode - "+sessions[i].pincode+"\nBlock - "+sessions[i].block_name+"\n\n";
             }
 
             for(var i=(mid*2);i<sessions.length;i++)
             {
+                if(sessions[i].min_age_limit == 18 && sessions[i].available_capacity>0)
                 thirdHalf+="Vaccine - "+sessions[i].vaccine+"\nAge Limit - "+sessions[i].min_age_limit+"+"+"\nAvailable Capacity - "+sessions[i].available_capacity+"\nVaccination Fee - "+sessions[i].fee_type+"\nVaccination Centre - "+sessions[i].name+" \nCentre Address - "+sessions[i].address+`, ${sessions[i].district_name}, ${sessions[i].state_name}.`+"\nPincode - "+sessions[i].pincode+"\nBlock - "+sessions[i].block_name+"\n\n";
             }
+
 
             firstHalf+=message;
             secondHalf+=message;
             thirdHalf+=message;
 
-            bot.sendMessage(userId, firstHalf);
-            bot.sendMessage(userId, secondHalf);
-            bot.sendMessage(userId, thirdHalf);
+            if(firstHalf!=message)
+            {
+                bot.sendMessage(userId, firstHalf);
+                bot.sendMessage(userId, secondHalf);
+                bot.sendMessage(userId, thirdHalf);
+            }
         }
         else
         {
